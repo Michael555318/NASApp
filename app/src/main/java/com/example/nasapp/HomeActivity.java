@@ -1,5 +1,6 @@
 package com.example.nasapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -19,13 +20,17 @@ public class HomeActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
-                    return true;
+//                    Intent search = new Intent(HomeActivity.this, SearchActivity.class);
+//                    startActivity(search);
+                    break;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
-                    return true;
+                    Intent search = new Intent(HomeActivity.this, SearchActivity.class);
+                    startActivity(search);
+                    break;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_notifications);
-                    return true;
+                    break;
             }
             return false;
         }
